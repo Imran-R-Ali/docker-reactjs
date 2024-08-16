@@ -35,3 +35,16 @@ jobs:
       - name: Push Docker image
         run: |
           docker push ialitest.azurecr.io/myapp:latest
+
+      - name: Deploy Container Instance using OIDC
+        run: |
+          az container create \
+            --resource-group iali \
+            --name iali-container-instance \
+            --image ialitest.azurecr.io/myapp:latest \
+            --cpu 1 \
+            --memory 1 \
+            --dns-name-label iali-container-instance \
+            --ports 80 \
+            --registry-login-server ialitest.azurecr.io \
+            --assign-identity
