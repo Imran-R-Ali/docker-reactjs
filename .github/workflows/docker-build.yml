@@ -42,9 +42,4 @@ jobs:
             --resource-group iali \
             --name ialitest \
             --image ialitest.azurecr.io/myapp:latest \
-            --cpu 1 \
-            --memory 1 \
-            --dns-name-label iali-container-instance \
-            --ports 80 \
-            --registry-login-server ialitest.azurecr.io \
-            --identity
+            --assign-identity
