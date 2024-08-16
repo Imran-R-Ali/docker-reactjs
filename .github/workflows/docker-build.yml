@@ -47,4 +47,4 @@ jobs:
             --dns-name-label iali-container-instance \
             --ports 80 \
             --registry-login-server ialitest.azurecr.io \
-            --assign-identity
+            --identity
