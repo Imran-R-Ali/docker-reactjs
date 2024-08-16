@@ -40,7 +40,7 @@ jobs:
         run: |
           az container create \
             --resource-group iali \
-            --name iali-container-instance \
+            --name ialitest \
             --image ialitest.azurecr.io/myapp:latest \
             --cpu 1 \
             --memory 1 \
