@@ -36,10 +36,12 @@ jobs:
         run: |
           docker push ialitest.azurecr.io/myapp:latest
 
-      - name: Deploy Container Instance using OIDC
+      - name: Deploy Container Instance
         run: |
           az container create \
             --resource-group iali \
             --name ialitest \
             --image ialitest.azurecr.io/myapp:latest \
             --assign-identity
+            --registry-username <> \
+            --registry-password <> \
